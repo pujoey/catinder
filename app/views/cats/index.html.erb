@@ -1,0 +1,18 @@
+<h1>Welcome to CaTinder!</h1>
+<h1>Who is Meow, and who is Not-Meow? You decide!</h1>
+
+<h3><%= link_to "Click Here to Get Started", "/cats?random=true" %></h3>
+
+
+  <div class="row">
+  <% @cats.each do |cat| %>
+    <div class="col-md-4">
+      <strong><%= cat.name %></strong>
+      <a href="#" class="thumbnail">
+      <%= image_tag(cat.image_uri) %>
+      </a>
+      (<em><%= cat.votes %></em>)
+    </div>
+  <% end %>
+  </div>
+
