@@ -1,18 +1,23 @@
-<h1>Welcome to CaTinder!</h1>
-<h1>Who is Meow, and who is Not-Meow? You decide!</h1>
+<div class="jumbotron">
+  <div class="container text-center">
+    <%= image_tag "catinder-logo.png" %>
+    <h1>Welcome to CATinder!</h1>
+    <h2>Who is Meow, and who is Not-Meow? You decide!</h2>
+    <h3><%= link_to "Get Started", "/cats?random=true", class: "btn btn-primary btn-lg" %></h3>
+  </div>
+</div>
 
-<h3><%= link_to "Click Here to Get Started", "/cats?random=true" %></h3>
-
-
+<div class="container-fluid">
   <div class="row">
   <% @cats.each do |cat| %>
-    <div class="col-md-4">
-      <strong><%= cat.name %></strong>
-      <a href="#" class="thumbnail">
-      <%= image_tag(cat.image_uri) %>
-      </a>
-      (<em><%= cat.votes %></em>)
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag cat.image_uri %>
+        <h3 class="text-muted text-center"><%= cat.name %></h3>
+        <p style="color:red" class="btn btn-default"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <em><%= link_to cat.votes, cat_path(cat.id), method: "PUT" %></em></p>
+      </div>
     </div>
   <% end %>
+  </div>
   </div>
 

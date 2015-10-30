@@ -1,0 +1,36 @@
+<div class="text-center">
+
+  <%= form_for(@cat) do |f| %>
+    <% if @cat.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cat.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @cat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :image_uri %><br>
+      <%= f.text_field :image_uri %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :votes %><br>
+      <%= f.text_field :votes %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+</div>

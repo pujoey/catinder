@@ -34,6 +34,8 @@ gem 'bootstrap_form'  # if you want bootstrap forms!
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   gem 'pry-rails'
