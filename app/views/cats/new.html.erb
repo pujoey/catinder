@@ -1,15 +1,17 @@
 <div class="text-center">
-
+  <br>
+  <br>
+  <br>
   <%= form_for(@cat) do |f| %>
 
     <div class="field">
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "NEW CAT NAME" %>
     </div>
     <br>
     <div class="field">
       <%= f.label :image_uri %><br>
-      <%= f.text_field :image_uri %>
+      <%= f.text_field :image_uri, placeholder: "LINK TO IMAGE URL" %>
     </div>
     <br>
     <div class="actions">

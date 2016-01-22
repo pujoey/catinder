@@ -21,13 +21,25 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="/">
-        <%= image_tag "catinder-logo.png", size: "120x30" %>
+        <%= image_tag "catinder-logo.png", size: "120x35" , id: "logo" %>
       </a>
-        <a class="nav navbar-nav navbar-right" href="/cats/new">New</a>
+    </div>
+    <div class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="/cats/new">Add Cat</a></li>
+      </ul>
     </div>
   </div>
 </nav>
