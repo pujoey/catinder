@@ -17,6 +17,7 @@ class CatsController < ApplicationController
   def update
     cat = Cat.find(params["id"])
     cat.upvote! if params["vote"]
+    flash[:success] = "Thank you for voting for " + cat.name if params["vote"]
     redirect_to cats_path(random: true)
   end
 
